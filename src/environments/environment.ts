@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  contentful: {
+    spaceId: 'contentful space id',   // Settings -> API Keys -> Add API Key -> Space ID
+    token: 'contentful api token'     // Settings -> API Keys -> Add API Key -> Content Delivery API 
+  }
 };
 
 /*
