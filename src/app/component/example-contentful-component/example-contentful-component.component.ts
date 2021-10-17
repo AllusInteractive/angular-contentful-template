@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { ContentfulService } from './../../services/contentful.service';
 
 @Component({
   selector: 'app-example-contentful-component',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./example-contentful-component.component.css']
 })
 export class ExampleContentfulComponentComponent implements OnInit {
+  contentfulObject: Observable<any>;
 
-  constructor() { }
+  constructor(private contentful: ContentfulService) { }
 
   ngOnInit() {
+    this.contentfulObject = this.contentful.getContent('Entry ID');
+    // Content -> Content Object -> Info -> Entry ID
   }
 
 }

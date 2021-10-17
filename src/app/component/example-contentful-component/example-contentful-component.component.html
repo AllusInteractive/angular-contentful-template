@@ -1,1 +1,5 @@
-<p>example-contentful-component works!</p>
+<div *ngIf="contentfulObject | async as object">            <!-- object is a variable that can be given any name -->
+    <div *ngFor="let item as contentfulObject.object">      <!-- item is a variabke that can be given any name -->
+        <p>{{ item.fields.contentfulField }}</p>            <!-- contentfulField is any field from the contentful object-->
+    </div>
+</div>
