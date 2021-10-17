@@ -13,8 +13,14 @@ export class ExampleContentfulComponentComponent implements OnInit {
   constructor(private contentful: ContentfulService) { }
 
   ngOnInit() {
-    this.contentfulObject = this.contentful.getContent('Entry ID');
-    // Content -> Content Object -> Info -> Entry ID
+    // logContent() gets the content and writes it to the console
+    // this.contentfulObject = this.contentful.logContent("Entry ID");
+
+    // getContent() gets the content from contentful using the Entry ID and sets it to the contentfulObject.
+    this.contentfulObject = this.contentful.getContent('Entry ID'); 
+    
+    // Entry ID is obtained from within Contentful
+    // Top Menu -> Content -> Content Object -> Info -> Entry ID
   }
 
 }
